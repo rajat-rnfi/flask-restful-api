@@ -1,6 +1,8 @@
 # flask-restful-api
 A Clean CRUD Architecture with Flask RestFul API.
 
+This project is for Creating,Updating,Deleting & Viewing the Articles with its nested comments. It is RestFul API based project so you have to set it up on your system and read the documentation to run the project.
+
 ## Basic Folder Structure
 > app.py
 
