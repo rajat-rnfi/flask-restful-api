@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "3b891186-96d0-43af-8524-ec20f7374378",
+		"name": "flask-restful-api-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19397611"
+	},
+	"item": [
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "search",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "length",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "orderby",
+									"value": "author",
+									"type": "text"
+								},
+								{
+									"key": "order",
+									"value": "desc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}articles",
+							"host": [
+								"{{base_url}}articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Title\",\r\n    \"content\": \"This is content of this Article\",\r\n    \"author\": \"rajat\",\r\n    \"publication_date\": \"2024-06-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}articles",
+							"host": [
+								"{{base_url}}articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Title\",\r\n    \"content\": \"This is content of this Article\",\r\n    \"author\": \"rajat\",\r\n    \"publication_date\": \"2024-06-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}articles/9",
+							"host": [
+								"{{base_url}}articles"
+							],
+							"path": [
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}articles/1",
+							"host": [
+								"{{base_url}}articles"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}articles/1",
+							"host": [
+								"{{base_url}}articles"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "add-comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\": \"rajat\",\r\n    \"content\": \"Test Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}articles/1/comments",
+							"host": [
+								"{{base_url}}articles"
+							],
+							"path": [
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:5000/api/",
+			"type": "string"
+		},
+		{
+			"key": "authkey",
+			"value": "kBdJQ8kI0bx@9h!nK2GFiY2#d",
+			"type": "string"
+		}
+	]
+}
